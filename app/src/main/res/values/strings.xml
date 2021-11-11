@@ -8,4 +8,5 @@
     <string name="ACH_default">0.3</string>
     <string name="Qb_default">0.1</string>
     <string name="epsilon_default">0.1</string>
+    <string name="title_string">Enter Data</string>
 </resources>
