@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import static java.lang.Math.*;
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.threshholder.MESSAGE";
     Double time_exposure, N, Co, V, P2, epsilon, lambda_a, Qb, pm, cq, change_in_c2;
@@ -48,6 +48,38 @@ public class MainActivity extends AppCompatActivity {
 //        intent.putExtra(EXTRA_MESSAGE, message);
 //        startActivity(intent);
     }
+
+    static double Round_off(double N, double n)
+    {
+        //taken from geeks for geeks
+        int h;
+        double l, a, b, c, d, e, i, j, m, f, g;
+        b = N;
+        c = floor(N);
+
+        // Counting the no. of digits to the left of decimal point
+        // in the given no.
+        for (i = 0; b >= 1; ++i)
+            b = b / 10;
+
+        d = n - i;
+        b = N;
+        b = b * pow(10, d);
+        e = b + 0.5;
+        if ((float)e == (float)ceil(b)) {
+            f = (ceil(b));
+            h = (int)(f - 2);
+            if (h % 2 != 0) {
+                e = e - 1;
+            }
+        }
+        j = floor(e);
+        m = pow(10, d);
+        j = j / m;
+        System.out.println("The number after rounding-off is "
+                + j);
+        return(j);
+    }
     public void displayTMax(View view){
 
         time_exposure_input = findViewById(R.id.editTextTimeExposure);
@@ -77,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         T_max = epsilon*lambda_a/(N*Math.pow(Qb,2)*Math.pow(pm,2)*cq);
 
         String message;
-        message = T_max + " is the T_max";
+        message = Round_off(T_max, 3) + " is the T_max";
         TextView tv = findViewById(R.id.textViewOutput);
         tv.setText(message);
 //        intent.putExtra(EXTRA_MESSAGE, message);
