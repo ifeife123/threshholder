@@ -5,8 +5,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="ACH_default">0.3</string>
-    <string name="Qb_default">0.1</string>
+    <string name="ACH_default">3</string>
+    <string name="Qb_default">0.49</string>
     <string name="epsilon_default">0.1</string>
     <string name="title_string">Enter Data</string>
+    <string name="risk_tolerance_label">Risk Tolerance, &#949; </string>
 </resources>
